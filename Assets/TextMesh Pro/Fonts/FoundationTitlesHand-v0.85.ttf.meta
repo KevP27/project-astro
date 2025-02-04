@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 04b6bc8b5252f3f4992ec4cf9c728e2d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - FoundationTitlesHand
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 726b0e8144f084f46b3545f45ac65aa3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

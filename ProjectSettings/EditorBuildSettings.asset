@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Pre-Game/RiceCandy Intro.unity
+    guid: 0d85dfc428b02a343a82760792ab604b
+  - enabled: 1
+    path: Assets/Scenes/Pre-Game/Start Menu.unity
+    guid: d8263998b86c7be4197a2368f51e5a1a
+  - enabled: 1
+    path: Assets/Scenes/Others/CharacterSelection.unity
+    guid: 2975d4cd89676034a8c66a2b942e130a
+  - enabled: 1
+    path: Assets/Scenes/Loading/Loading.unity
+    guid: 93b3e266b7a9454478284413ccd5175d
+  - enabled: 1
+    path: Assets/Scenes/Loading/Loading 1.unity
+    guid: d8bcb852a5bd4284aa13640510b37943
+  - enabled: 1
+    path: Assets/Scenes/Others/Game.unity
+    guid: 3cffbbaa115246b4498cab58e191d665
+  - enabled: 1
+    path: Assets/Scenes/Level 0/Game 1.unity
+    guid: 31e1c4b0034f02242a7e8dad565f9d7d
+  - enabled: 1
+    path: Assets/Scenes/Others/Game Over 1.unity
+    guid: dd301e0de2a0aa2488c9676c9e1a570e
+  - enabled: 1
+    path: Assets/Scenes/Loading/Loading 2.unity
+    guid: 48dac28f6f5229446b0ca6c4dff73f31
+  - enabled: 1
+    path: Assets/Scenes/Level 0.1/Level 0.1.unity
+    guid: a5aa76f577f296f4381befe738b616d6
+  - enabled: 1
+    path: Assets/Scenes/Loading/Loading 3.unity
+    guid: bfcb52ea5b7cd8c499dad4e97fe1bb6b
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Level 1.unity
+    guid: 8f4771a3e3a56354a98268c242999585
+  m_configObjects: {}
