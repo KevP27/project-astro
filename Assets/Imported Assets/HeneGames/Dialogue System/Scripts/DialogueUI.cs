@@ -35,14 +35,6 @@ namespace HeneGames.DialogueSystem
         [SerializeField] private TextMeshProUGUI messageText;
         [SerializeField] private GameObject dialogueWindow;
         [SerializeField] private GameObject interactionUI;
-        [SerializeField] private GameObject shoot;
-        [SerializeField] private GameObject jump;
-        [SerializeField] private GameObject joystick;
-        [SerializeField] private GameObject healthbar;
-        [SerializeField] private GameObject coin;
-        [SerializeField] private GameObject watermelon;
-        [SerializeField] private GameObject pause;
-
 
         [Header("Settings")]
         [SerializeField] private bool animateText = true;
@@ -60,6 +52,14 @@ namespace HeneGames.DialogueSystem
             interactionUI.SetActive(false);
         }
 
+        private void Update()
+        {
+            //Next dialogue input
+            if (Input.GetKeyDown(actionInput))
+            {
+                NextSentence();
+            }
+        }
         public void NextSentence()
         {
             //Continue only if we have dialogue
@@ -73,13 +73,6 @@ namespace HeneGames.DialogueSystem
             if (lastSentence)
             {
                 currentDialogueManager = null;
-                jump.SetActive(true);
-                shoot.SetActive(true);
-                joystick.SetActive(true);
-                healthbar.SetActive(true);
-                coin.SetActive(true);
-                watermelon.SetActive(true);
-                pause.SetActive(true);
             }
         }
 

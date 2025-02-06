@@ -48,24 +48,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (joystick.Horizontal >= .1f)
-        {
-            horizontalMove = runSpeed;
+        horizontalMove = 0f;
 
-            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        }
-
-        else if (joystick.Horizontal <= -.1f)
+        if (Input.GetKey(KeyCode.A))
         {
             horizontalMove = -runSpeed;
-
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         }
-
+        else if (Input.GetKey(KeyCode.D))
+        {
+            horizontalMove = runSpeed;
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        }
         else
         {
-            horizontalMove = 0f;
-            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+            animator.SetFloat("Speed", 0f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Shoot();
         }
 
         currentHeight = transform.position.y;
@@ -73,22 +80,24 @@ public class PlayerMovement : MonoBehaviour
         if (currentHeight < -50f)
         {
             SceneManager.LoadScene("Game Over 1");
-            //ads.ShowBanner();
         }
 
-        if (Input.GetKeyDown("delete"))
+        if (Input.GetKeyDown(KeyCode.Delete))
         {
             PlayerPrefs.DeleteAll();
             highScore.text = "0";
         }
     }
 
-    public void Jump()
+    void Jump()
     {
         jump = true;
-
         animator.SetBool("isJumping", true);
-        animator.SetFloat("Speed", 0f);
+    }
+
+    void Shoot()
+    {
+        Instantiate(Bullet, FirePos.position, FirePos.rotation);
     }
 
     public void onLanding()
