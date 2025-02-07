@@ -41,7 +41,10 @@ public class Player : MonoBehaviour
 
 	public AudioSource Laser;
 
-	void Start()
+    public delegate void PlayerLanded();
+    public static event PlayerLanded OnPlayerLanded;
+
+    void Start()
     {
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
@@ -124,8 +127,9 @@ public class Player : MonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
-					OnLandEvent.Invoke();
-			}
+                    OnLandEvent.Invoke();
+					OnPlayerLanded?.Invoke();
+            }
 		}
 	}
 

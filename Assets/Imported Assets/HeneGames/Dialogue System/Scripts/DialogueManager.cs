@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace HeneGames.DialogueSystem
 {
@@ -13,14 +11,11 @@ namespace HeneGames.DialogueSystem
         private float coolDownTimer;
         private bool dialogueIsOn;
         private DialogueTrigger dialogueTrigger;
-        public static bool GameIsPaused = false;
-        public static bool buttonPressed = false;
 
         public enum TriggerState
         {
             Collision,
-            Input,
-            Time
+            Input
         }
 
         [Header("References")]
@@ -35,63 +30,6 @@ namespace HeneGames.DialogueSystem
         [SerializeField] private TriggerState triggerState;
         [SerializeField] private List<NPC_Centence> sentences = new List<NPC_Centence>();
 
-        private void Start()
-        {
-            Scene currentScene = SceneManager.GetActiveScene();
-
-            // Retrieve the name of this scene.
-            string sceneName = currentScene.name;
-
-            if (sceneName == "Game 1")
-            {
-                StartCoroutine(TimedDialogue());
-            }
-        }
-
-        public IEnumerator TimedDialogue()
-        {
-            yield return new WaitForSeconds(5.5f);
-            if (dialogueTrigger != null)
-            {
-                dialogueTrigger.startDialogueEvent.Invoke();
-            }
-
-            startDialogueEvent.Invoke();
-
-            //If component found start dialogue
-            DialogueUI.instance.StartDialogue(this);
-
-            //Hide interaction UI
-            DialogueUI.instance.ShowInteractionUI(false);
-
-            dialogueIsOn = true;
-
-            //StartCoroutine(TimetoPause());
-        }
-
-        public IEnumerator TimetoPause()
-        {
-            yield return new WaitForSeconds(1.5f);
-            Pause();
-        }
-
-        public void Resume()
-        {
-            Time.timeScale = 1f;
-            GameIsPaused = false;
-        }
-
-        public void Pause()
-        {
-            Time.timeScale = 0f;
-            GameIsPaused = true;
-        }
-
-        public void pressButton()
-        {
-            buttonPressed = true;
-        }
-
         private void Update()
         {
             //Timer
@@ -101,9 +39,8 @@ namespace HeneGames.DialogueSystem
             }
 
             //Start dialogue by input
-            if (buttonPressed)
+            if (Input.GetKeyDown(DialogueUI.instance.actionInput) && dialogueTrigger != null && !dialogueIsOn)
             {
-                buttonPressed = false;
                 //Trigger event inside DialogueTrigger component
                 if (dialogueTrigger != null)
                 {

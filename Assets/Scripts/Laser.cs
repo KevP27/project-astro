@@ -45,13 +45,20 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        if (press == true)
+        if (Input.GetKey(KeyCode.L))
         {
             EnableLaser();
+            if (!LaserCannonSound.isPlaying)
+            {
+                LaserCannonSound.loop = true;
+                LaserCannonSound.Play();
+            }
         }
         else
         {
             DisableLaser();
+            LaserCannonSound.loop = false;
+            LaserCannonSound.Stop();
         }
     }
 
