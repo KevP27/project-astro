@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static Player;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,14 +28,21 @@ public class PlayerMovement : MonoBehaviour
     public float previousHeight = 0f;
     public float travel;
 
-    public Joystick joystick;
+    //public Joystick joystick;
 
-    public GameObject Bullet;
+    private GameObject Bullet;
     public Transform FirePos;
 
     public Animator animator;
     private bool isMoving = false;
     private bool isJumping = false;
+
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    private bool m_Grounded;            // Whether or not the player is grounded.
+    public UnityEvent OnLandEvent;
+    [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+    public static event PlayerLanded OnPlayerLanded;
 
     //public AdsManager2 ads;
 
@@ -42,9 +51,10 @@ public class PlayerMovement : MonoBehaviour
         score.text = scoreValue.ToString();
         highScore.text = PlayerPrefs.GetInt("HighScore").ToString();
 
+
+
         //ads.HideBanner();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -65,14 +75,16 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Speed", 0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+        if (m_Grounded) {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Shoot();
+            }
         }
 
         currentHeight = transform.position.y;
@@ -97,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(Bullet, FirePos.position, FirePos.rotation);
+        Instantiate(null, FirePos.position, FirePos.rotation);
     }
 
     public void onLanding()
@@ -120,5 +132,22 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+
+        bool wasGrounded = m_Grounded;
+        m_Grounded = false;
+
+        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                m_Grounded = true;
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
+                OnPlayerLanded?.Invoke();
+            }
+        }
     }
 }

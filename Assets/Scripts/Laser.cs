@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour
         DisableLaser();
     }
 
-    public void onPress()
+    /*public void onPress()
     {
         isHeldDown = true;
         Debug.Log(isHeldDown);
@@ -42,7 +42,7 @@ public class Laser : MonoBehaviour
         LaserCannonSound.loop = true;
         LaserCannonSound.Play();
     }
-
+    */
     void Update()
     {
         if (Input.GetKey(KeyCode.L))
@@ -62,6 +62,7 @@ public class Laser : MonoBehaviour
         }
     }
 
+    /*
     public void onRelease()
     {
         press = false;
@@ -75,6 +76,7 @@ public class Laser : MonoBehaviour
 
         DisableLaser();
     }
+    */
 
     void EnableLaser()
     {
