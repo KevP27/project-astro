@@ -8042,8 +8042,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: Enter through that portal on the other side when you are ready. Stay
-      safe and good luck.
+    sentence: Press and hold "L" to use the weapon. Enter through that portal on
+      the other side when you are ready.
     sentenceSound: {fileID: 8300000, guid: bcd3a680d2e15194eb90364eb199e3dc, type: 3}
     sentenceEvent:
       m_PersistentCalls:
@@ -25514,13 +25514,17 @@ MonoBehaviour:
   m_JumpForce: 1000
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 200
   m_GroundCheck: {fileID: 404299167}
   m_CeilingCheck: {fileID: 2078005243}
   m_CrouchDisableCollider: {fileID: 0}
+  pause: {fileID: 2012062576}
+  coin: {fileID: 118254266}
+  watermelon: {fileID: 1407217033}
+  healthbar: {fileID: 1591266046}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
