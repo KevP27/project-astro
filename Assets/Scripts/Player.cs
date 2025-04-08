@@ -76,11 +76,6 @@ public class Player : MonoBehaviour
             m_Rigidbody2D.gravityScale = 1f;
             StartCoroutine(FallingFromSky2());
         }
-        else if (sceneName == "Level 1")
-        {
-            m_Rigidbody2D.gravityScale = 1f;
-            StartCoroutine(FallingFromSky2());
-        }
     }
 
     public void Update()
