@@ -8,6 +8,6 @@ public class Portal : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D col)
     {
-        SceneManager.LoadScene("Loading 2");
+        SceneManager.LoadScene("Loading 3");
     }
 }
