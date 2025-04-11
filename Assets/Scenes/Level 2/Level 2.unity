@@ -9498,7 +9498,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.05930035, y: 0.10440922}
   m_SpriteTilingProperty:
-    border: {x: 0.55, y: 0, z: 0, w: 0.42}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
@@ -9550,7 +9550,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 32175b9161e17b94cab5e64615926406, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e17ac1011efe04a8eabf1ec57fd0bd07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9570,8 +9570,8 @@ Transform:
   m_GameObject: {fileID: 474626035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -67.046, y: 30.628, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -67.046, y: 30.893, z: 0}
+  m_LocalScale: {x: -1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1978754785}
@@ -16247,7 +16247,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.05930035, y: 0.10440922}
   m_SpriteTilingProperty:
-    border: {x: 0.55, y: 0, z: 0, w: 0.42}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
@@ -16299,7 +16299,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 32175b9161e17b94cab5e64615926406, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 225256330923c43e5a84663230125636, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16319,8 +16319,8 @@ Transform:
   m_GameObject: {fileID: 724502599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.121, y: 26.999, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -24.121, y: 27.2619, z: 0}
+  m_LocalScale: {x: -1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1306577094}
@@ -20902,23 +20902,9 @@ MonoBehaviour:
         m_CallState: 2
   triggerState: 1
   sentences:
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: Greetings A-720. I am your guide, D-949.
+  - dialogueCharacter: {fileID: 11400000, guid: b4e3b53a3244346ffa7bfc2635073d62, type: 2}
+    sentence: Greetings A-720. I am J-425.
     sentenceSound: {fileID: 8300000, guid: 13e99dbad8569f24ba3f9a1103542d49, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: I will equip you with the latest laser-tech weapon for the following
-      test environment.
-    sentenceSound: {fileID: 8300000, guid: bcd3a680d2e15194eb90364eb199e3dc, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: Press and hold "L" to use the weapon. Enter through that portal on
-      the other side when you are ready.
-    sentenceSound: {fileID: 8300000, guid: bcd3a680d2e15194eb90364eb199e3dc, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -29289,7 +29275,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -22.428818, y: -13.73484, z: 2.1165962}
-  m_LocalScale: {x: 0.7, y: 1, z: 1.6814396}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.6814396}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716482356}
@@ -29730,7 +29716,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 20.531181, y: -17.36484, z: 2.1165962}
-  m_LocalScale: {x: 0.7, y: 1, z: 1.6814396}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.6814396}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716482356}
@@ -36854,23 +36840,9 @@ MonoBehaviour:
         m_CallState: 2
   triggerState: 1
   sentences:
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: Greetings A-720. I am your guide, D-949.
+  - dialogueCharacter: {fileID: 11400000, guid: 2223493d7e5fb44489f986a101489548, type: 2}
+    sentence: Greetings A-720. I am F-313.
     sentenceSound: {fileID: 8300000, guid: 13e99dbad8569f24ba3f9a1103542d49, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: I will equip you with the latest laser-tech weapon for the following
-      test environment.
-    sentenceSound: {fileID: 8300000, guid: bcd3a680d2e15194eb90364eb199e3dc, type: 3}
-    sentenceEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - dialogueCharacter: {fileID: 11400000, guid: 7af43347161b11d4cb0a34d1402962bc, type: 2}
-    sentence: Press and hold "L" to use the weapon. Enter through that portal on
-      the other side when you are ready.
-    sentenceSound: {fileID: 8300000, guid: bcd3a680d2e15194eb90364eb199e3dc, type: 3}
     sentenceEvent:
       m_PersistentCalls:
         m_Calls: []
